@@ -137,19 +137,56 @@ git commit -m "Opis"
 git push
 ```
 
-## Czego jeszcze warto się nauczyć
+## git pull
+
+`git pull` = pobierz nowe commity z GitHuba i wlej je do swojej lokalnej gałęzi.
+
+Kiedy: pracowałeś na innym PC, ktoś wypchnął zmiany, albo sam edytowałeś coś na GitHubie w przeglądarce.
+
+```bash
+git pull
+```
+
+Często to skrót od: `git fetch` (pobierz) + `git merge` (wlej do bieżącej gałęzi).
+
+Jeśli lokalnie i na GitHubie jest to samo, zobaczysz np. *Already up to date*.
+
+**Kolejność przy pracy na dwóch miejscach:** przed nową pracą warto `git pull`, potem kodujesz, potem `commit` + `push`.
+
+## .gitignore
+
+Plik `.gitignore` w rootcie projektu mówi Gitowi: **tych plików / folderów nie śledź**.
+
+Po co:
+- nie wrzucać haseł (`.env`),
+- nie wrzucać ogromnego `node_modules/`,
+- nie śledzić śmieci systemu (`Thumbs.db`, `.DS_Store`).
+
+Przykład linii w `.gitignore`:
+
+```
+node_modules/
+.env
+Thumbs.db
+```
+
+Uwaga: jeśli plik **już był zcommitowany**, samo dopisanie do `.gitignore` go nie „wyrzuci” z historii śledzenia — trzeba by osobno `git rm --cached`. Na nowe pliki działa od razu.
+
+Po utworzeniu `.gitignore`: `git add .gitignore` → `commit` → `push`.
+
+## Na później
 
 | Temat | Po co |
 |-------|-------|
-| `git pull` | Pobierz zmiany z GitHuba (np. z innego komputera) |
-| `.gitignore` | Pliki, których Git ma nie śledzić (np. tajemnice, `node_modules`) |
 | Pull Request | Propozycja merge na GitHubie (praca zespołowa) |
+| `git fetch` osobno | Zobacz remote bez od razu merge |
 
 ## Mini-ściąga kolejności
 
-1. Pracujesz w plikach.  
-2. `git status` / `git diff` — sprawdź.  
-3. `git add ...` — przygotuj.  
-4. `git commit -m "..."` — zapisz lokalnie.  
-5. `git push` — wyślij na GitHub.  
-6. `git log --oneline` — potwierdź historię.
+1. (Opcjonalnie) `git pull` — zsynchronizuj z GitHubem.  
+2. Pracujesz w plikach.  
+3. `git status` / `git diff` — sprawdź.  
+4. `git add ...` — przygotuj (`.gitignore` pilnuje, czego nie brać).  
+5. `git commit -m "..."` — zapisz lokalnie.  
+6. `git push` — wyślij na GitHub.  
+7. `git log --oneline` — potwierdź historię.
