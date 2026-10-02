@@ -4,7 +4,20 @@ const inputElement = document.querySelector("#message-input");
 const nameInputElement = document.querySelector("#name-input");
 const errorElement = document.querySelector("#form-error");
 
-let messages = [];
+function saveMessages() {
+  localStorage.setItem("messages", JSON.stringify(messages));
+}
+
+const saved = localStorage.getItem("messages");
+
+let messages;
+if(saved !== null) {
+  messages = JSON.parse(saved);
+}
+else {
+  messages = [];
+}
+
 
 function showMessages() {
   listElement.textContent = "";
@@ -26,6 +39,7 @@ formElement.addEventListener("submit", function(event){
     errorElement.textContent = "";
     messages.push(name + ": " + text);
     showMessages();
+    saveMessages();
     inputElement.value = "";
     nameInputElement.value = "";
   }
