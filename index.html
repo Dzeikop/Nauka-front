@@ -1,0 +1,43 @@
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<p id="value"> 0 </p>
+<button id="plus" class="action"> +1 </button>
+<button id="minus" class="action"> -1 </button>
+<button id="reset"> reset </button>
+
+<script>
+const valueElement = document.querySelector("#value");
+const buttonElement = document.querySelector("#plus");
+const buttonElementMinus = document.querySelector("#minus");
+const resetElement = document.querySelector("#reset");
+
+let count = 0;
+
+function showCount() {
+  valueElement.textContent = count;
+}
+
+showCount();
+
+buttonElement.addEventListener("click", function () {
+  count = count + 1;
+  showCount();
+});
+
+buttonElementMinus.addEventListener("click", function () {
+  if (count > 0) {
+    count = count - 1;
+  }
+  showCount();
+});
+
+resetElement.addEventListener("click", function () {
+  count = 0;
+  showCount();
+});
+</script>
+</body>
+</html>

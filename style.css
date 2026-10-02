@@ -1,0 +1,90 @@
+body {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: Georgia, serif;
+}
+
+#value {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+button {
+  font-size: 20px;
+  margin: 8px;
+}
+
+.action {
+  background-color: lightblue;
+}
+
+#reset {
+  color: red;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (min-width: 600px) {
+  .toolbar {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+#task-list li {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+#post-list li {
+  cursor: pointer;
+}
+
+#post-list li.selected {
+  font-weight: bold;
+  color: #0b3d2e;
+}
+
+#post-detail {
+  margin-top: 20px;
+  line-height: 1.5;
+  padding: 12px;
+  background-color: #f3f6f4;
+  border-radius: 4px;
+}
+
+#comment-list {
+  margin-top: 16px;
+  padding-left: 20px;
+}
+
+#comment-list li {
+  margin-bottom: 12px;
+  line-height: 1.4;
+  font-size: 14px;
+  color: #333333;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color:#0b3d2e;
+}
+
+#reload-posts {
+  background-color: #0b3d2e;
+  color: #ffffff;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+}
