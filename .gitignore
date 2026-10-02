@@ -1,0 +1,17 @@
+# System / edytor
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+
+# Tajemnice i lokalne ustawienia (gdy się pojawią)
+.env
+.env.*
+
+# Zależności frontendu (gdy dojdziesz do npm)
+node_modules/
+
+# Cache / build (na później)
+dist/
+build/
+.cache/
