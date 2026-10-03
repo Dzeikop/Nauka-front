@@ -9,3 +9,41 @@ h1 {
     color: green;
     font-size: 40px;
 }
+
+#form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+@media (min-width: 600px) {
+    #form {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+#error {
+    color: #b00020;
+    min-height: 1.2;
+}
+
+#form-list li {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+#form button[type="submit"] {
+    background-color: #0b3d2e;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+#form-list button {
+    color: #b00020;
+    cursor: pointer;
+  }
