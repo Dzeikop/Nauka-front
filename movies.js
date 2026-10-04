@@ -3,6 +3,7 @@ const title = document.querySelector("#title");
 const year = document.querySelector("#year");
 const formList = document.querySelector("#form-list");
 const errorText = document.querySelector("#error");
+const search = document.querySelector("#search");
 
 function saveMovies() {
     localStorage.setItem("movies", JSON.stringify(movies));
@@ -23,7 +24,13 @@ else {
 
 function showMovies() {
     formList.textContent = "";
+    const query = search.value.toLowerCase();
+
     for(let i=0; i<movies.length; i++) {
+        if(!movies[i].title.toLowerCase().startsWith(query)) {
+            continue;
+        }
+
         const formListElement = document.createElement("li");
         const text = document.createElement("span");
         text.textContent = `${movies[i].title} - ${movies[i].year}`;
@@ -64,8 +71,6 @@ function showMovies() {
             editingIndex = i;
         });
 
-
-
    
     }
 }
@@ -103,6 +108,10 @@ form.addEventListener("submit", function(e) {
     title.value = "";
     year.value = "";
 
+});
+
+search.addEventListener("input", function() {
+    showMovies();
 });
 
 showMovies();
