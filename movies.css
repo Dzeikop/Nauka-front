@@ -1,0 +1,35 @@
+.page {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+@media (min-width: 600px) {
+    #form {
+        flex-direction: row;
+        text-align: center;
+    }
+}
+
+#form-list li {
+    display: flex;
+    text-align: center;
+    gap: 12px;
+    margin: 10px;
+}
+
+.watched {
+    text-decoration: line-through;
+}
+
+#error {
+    text-decoration: underline;
+    font-size: 20px;
+}
+
