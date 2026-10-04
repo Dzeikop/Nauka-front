@@ -46,7 +46,7 @@ function showMovies() {
 
     if(sort === "year") {
         movies.sort(function(a, b) {
-            return a.year.localeCompare(b.year);
+            return Number(a.year) - Number(b.year);
         });
         saveMovies();
     }
@@ -115,7 +115,7 @@ function showMovies() {
         }
     }
 
-    stats.textContent = `filmy: ${movies.length} (Obejrzne: ${watchedCount})`;
+    stats.textContent = `filmy: ${movies.length} (Obejrzane: ${watchedCount})`;
 
     if(visibleCount === 0) {
         formList.textContent = "Brak filmów";

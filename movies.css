@@ -87,3 +87,9 @@ body {
     background-color: #f5f5f5;
     font-family: system-ui, sans-serif;
 }
+
+#form-list {
+    text-align: center;
+    padding-left: 0;
+    list-style: none;
+}
