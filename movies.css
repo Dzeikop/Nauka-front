@@ -27,6 +27,7 @@ header {
     gap: 12px;
     margin: 10px;
     justify-content: center;
+    align-items: center;
 }
 
 .watched {
@@ -37,6 +38,7 @@ header {
     text-decoration: underline;
     font-size: 20px;
     text-align: center;
+    color: #b00020;
 }
 
 #search {
@@ -49,4 +51,39 @@ header {
 
 input {
     text-align: center;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+#btn-cancel {
+    display: none;
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 16px 0;
+  }
+
+#stats {
+    text-align: center;
+    margin: 8px 0 16px;
+}
+
+button {
+    cursor: pointer;
+    padding: 8px 12px;
+    color: darkmagenta;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+
+body {
+    margin: 0;
+    background-color: #f5f5f5;
+    font-family: system-ui, sans-serif;
 }

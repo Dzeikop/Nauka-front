@@ -19,7 +19,18 @@
             <input id="title" type="text" placeholder="Podaj tytuł filmu">
             <input id="year" type="number" placeholder="Podaj rok wydania filmu">
             <button id="btn-add" type="submit">Dodaj</button>
+            <button id="btn-cancel" type="button">Anuluj</button>
             </form>
+
+            <div class="toolbar">
+                <button id="filter-all">Wszystkie</button>
+                <button id="filter-watched">Tylko obejrzane</button>
+
+                <button id="sort-title">Tytuł A-Z</button>
+                <button id="sort-year">Rok ↑</button>
+            </div>
+
+            <p id="stats"></p>
 
             <input id="search" type="text" placeholder="Szukaj filmu...">
             <ul id="form-list">
